@@ -1,0 +1,2 @@
+
+int remove(int, int);
