@@ -5,32 +5,29 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Header">
-      <UniqueIdentifier>{5e96917c-4a3c-4764-9fe0-0a7ff563e9ac}</UniqueIdentifier>
+    <Filter Include="Source Files\Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Source Files\Include_Files">
-      <UniqueIdentifier>{bc7f6cba-7e38-48d6-9701-9545702d9830}</UniqueIdentifier>
+    <Filter Include="Source Files\includes_files">
+      <UniqueIdentifier>{c8044806-63c6-4114-992e-388c55b51bf2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Student.cpp">
-      <Filter>Source Files\Include_Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files\Include_Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Student.h">
-      <Filter>Source Files\Header</Filter>
+    <ClInclude Include="Header\Student.h">
+      <Filter>Source Files\Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Include_Files\main.cpp">
+      <Filter>Source Files\includes_files</Filter>
+    </ClCompile>
+    <ClCompile Include="Include_Files\Student.cpp">
+      <Filter>Source Files\includes_files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
