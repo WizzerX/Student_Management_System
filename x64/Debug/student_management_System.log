@@ -1,9 +1,2 @@
-﻿  main.cpp
-\Include_Files\main.cpp(1,1): error C1083: Cannot open source file: 'Include_Files\main.cpp': No such file or directory
-  (compiling source file '/Include_Files/main.cpp')
-  
-  Student.cpp
-\Include_Files\Student.cpp(1,1): error C1083: Cannot open source file: 'Include_Files\Student.cpp': No such file or directory
-  (compiling source file '/Include_Files/Student.cpp')
-  
-  Generating Code...
+﻿  Student.cpp
+  student_management_System.vcxproj -> D:\WebDeve\c++\student_management_System\x64\Debug\student_management_System.exe
