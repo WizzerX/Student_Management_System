@@ -13,7 +13,7 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Source Files\includes_files">
+    <Filter Include="Source Files\src">
       <UniqueIdentifier>{c8044806-63c6-4114-992e-388c55b51bf2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -24,10 +24,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Include_Files\main.cpp">
-      <Filter>Source Files\includes_files</Filter>
+      <Filter>Source Files\src</Filter>
     </ClCompile>
     <ClCompile Include="Include_Files\Student.cpp">
-      <Filter>Source Files\includes_files</Filter>
+      <Filter>Source Files\src</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
