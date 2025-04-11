@@ -1,33 +1,38 @@
 #include<iostream>
 #include <string>
+#include<vector>
 using namespace std;
 
 
 
-class Data
+class Student
 {
 public:
+	char gender;
 	string Name;
 	int Roll=0;
 	string Address;
 	string Section;
 	int Phone_Number=0;
 	
+	vector<Student>Vectorstudent;
+
 public:
-	Data(//string name, int roll, string address,
-		//string section,
-		);
+	Student(string name, int Roll, string section, int phonenumber, char gender, string address);
 
 	void display();
 
 
 	/*********************Setter************************/
-	void AddData();
+	void AddStudent();
 
 	/*********************Getter************************/
-	void GetName(string name) const;
-	void getRoll(int roll)const;
-	void getAddress(string address) const;
-	void getSection(string section) const;
+	string GetName() { return Name; }
+	int getRoll() { return Roll; }
+	int getphonenumber() { return Phone_Number; }
+	string getAddress() { return Address; }
+	string getSection() { return Section; }
+	char getGender() { return gender; }
+
 
 };

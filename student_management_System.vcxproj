@@ -22,8 +22,8 @@
     <ClInclude Include="Header\Student.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Include_Files\main.cpp" />
-    <ClCompile Include="Include_Files\Student.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Student.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
