@@ -11,16 +11,14 @@ StudentManager::StudentManager(){}
 
 StudentManager::StudentManager(string name, string address, string section, char gender, int roll, int phone)
 {
-	/*
-	cout << "Enter the name " << "\n";
+	
 	Name = name;
-	cout << "Roll:" <<  "\n";
 	Roll = roll;
-	cout << "Section:" <<  "\n";
 	Section = section;
-	cout << "Enter the phone number" << "\n";
 	Phone_Number = phone;
-	*/
+	Gender = gender;
+	Address = address;
+	
 
 }
 
@@ -28,17 +26,18 @@ StudentManager::StudentManager(string name, string address, string section, char
 
 
 
+
 void StudentManager::display()
 	{
-	for (const auto& s : Vectorstudent) {
+	for (int i = 0;i<Vectorstudent.size();i++) {
 
-
-		cout << "Name:" << Name << "\n";
-		cout << "Roll:" << Roll << "\n";
-		cout << "Section:" << Section << "\n";
-		cout << "Phone number:" << Phone_Number << "\n";
-		cout << "Address:" << Address << "\n";
-		cout << "Gender:" << Gender << "\n";
+		//Vectorstudent[i].
+		cout << "Name:" << Vectorstudent[i].Name << "\n";
+		cout << "Roll:" << Vectorstudent[i].Roll << "\n";
+		cout << "Section:" << Vectorstudent[i].Section << "\n";
+		cout << "Phone number:" << Vectorstudent[i].Phone_Number << "\n";
+		cout << "Address:" << Vectorstudent[i].Address << "\n";
+		cout << "Gender:" << Vectorstudent[i].Gender << "\n";
 
 	}
 
@@ -48,6 +47,7 @@ void StudentManager::display()
 
 	void StudentManager::AddStudent()
 	{
+		cin.ignore();
 		cout << "Enter the name " << "\n";
 		getline(cin, Name);
 		cout << "Enter the roll" << "\n";
@@ -66,7 +66,21 @@ void StudentManager::display()
 
 
 
-		Vectorstudent.emplace_back(Name, Address, Section, Gender, Roll, Phone_Number);
+		Vectorstudent.push_back(StudentManager( Name, Address, Section, Gender, Roll, Phone_Number));
+
+
+	}
+
+	void StudentManager::RemoveStudent()
+	{
+
+
+
+	}
+
+	void StudentManager::EditStudent()
+	{
+
 
 
 	}

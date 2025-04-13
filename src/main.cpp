@@ -10,8 +10,7 @@ int main() {
 	unique_ptr<StudentManager>Student = make_unique<StudentManager>();
 
 
-	//Student->AddStudent();
-	//Student->display();
+	
 	int choice;
 
 	do {
@@ -21,15 +20,30 @@ int main() {
 		cin >> choice;
 
 		switch (choice) {
-		case1:
+		case 1:
 			Student->AddStudent();
+			break;
+		case 2:
+			Student->display();
+			break;
+
+		case 3:
+			Student->RemoveStudent();
+			break;
+		case 4:
+			Student->EditStudent();
+			break;
+					
+		case 5:
+			cout << "Exiting.......\n";
+			break;
 			
 
 
 
 
 		}
-	} while (choice != 6);
+	} while (choice != 5);
 
 	return 0;
 }
