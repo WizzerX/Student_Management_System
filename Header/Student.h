@@ -5,23 +5,25 @@ using namespace std;
 
 
 
-class Student
+class StudentManager
 {
 public:
-	char gender;
-	string Name;
+	char Gender='A';
+	string Name="";
 	int Roll=0;
-	string Address;
-	string Section;
+	string Address="";
+	string Section="";
 	int Phone_Number=0;
 	
-	vector<Student>Vectorstudent;
+	
 
 public:
-	Student(string name, int Roll, string section, int phonenumber, char gender, string address);
+	StudentManager();
+	StudentManager(string name, string address, string section, char gender, int roll, int phone);
 
 	void display();
 
+	vector <StudentManager>Vectorstudent;
 
 	/*********************Setter************************/
 	void AddStudent();
@@ -32,7 +34,7 @@ public:
 	int getphonenumber() { return Phone_Number; }
 	string getAddress() { return Address; }
 	string getSection() { return Section; }
-	char getGender() { return gender; }
+	char getGender() { return Gender; }
 
 
 };

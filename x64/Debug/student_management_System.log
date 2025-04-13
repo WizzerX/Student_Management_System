@@ -1,3 +1,4 @@
 ﻿  main.cpp
-D:\WebDeve\c++\student_management_System\student_management_System\src\main.cpp(8,6): warning C4326: return type of 'main' should be 'int' instead of 'void'
+D:\WebDeve\c++\student_management_System\student_management_System\src\main.cpp(31,3): warning C4060: switch statement contains no 'case' or 'default' labels
+D:\WebDeve\c++\student_management_System\student_management_System\src\main.cpp(24,3): warning C4102: 'case1': unreferenced label
   student_management_System.vcxproj -> D:\WebDeve\c++\student_management_System\x64\Debug\student_management_System.exe

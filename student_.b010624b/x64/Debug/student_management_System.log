@@ -1,3 +1,4 @@
-﻿  main.cpp
-D:\WebDeve\c++\student_management_System\student_management_System\src\main.cpp(8,6): warning C4326: return type of 'main' should be 'int' instead of 'void'
+﻿  Student.cpp
+  main.cpp
+  Generating Code...
   student_management_System.vcxproj -> D:\WebDeve\c++\student_management_System\student_management_System\x64\Debug\student_management_System.exe
