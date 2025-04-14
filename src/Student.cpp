@@ -9,7 +9,7 @@ using namespace std;
 
 StudentManager::StudentManager(){}
 
-StudentManager::StudentManager(string name, string address, string section, char gender, int roll, int phone)
+StudentManager::StudentManager(string name, string address, string section, char gender, int roll, string phone)
 {
 	
 	Name = name;
@@ -29,15 +29,15 @@ StudentManager::StudentManager(string name, string address, string section, char
 
 void StudentManager::display()
 	{
-	for (int i = 0;i<Vectorstudent.size();i++) {
+for(const auto& V:Vectorstudent){
 
-		//Vectorstudent[i].
-		cout << "Name:" << Vectorstudent[i].Name << "\n";
-		cout << "Roll:" << Vectorstudent[i].Roll << "\n";
-		cout << "Section:" << Vectorstudent[i].Section << "\n";
-		cout << "Phone number:" << Vectorstudent[i].Phone_Number << "\n";
-		cout << "Address:" << Vectorstudent[i].Address << "\n";
-		cout << "Gender:" << Vectorstudent[i].Gender << "\n";
+	
+		cout << "Name:" << V.Name << "\n";
+		cout << "Roll:" << V.Roll << "\n";
+		cout << "Section:" << V.Section << "\n";
+		cout << "Phone number:" << V.Phone_Number << "\n";
+		cout << "Address:" << V.Address << "\n";
+		cout << "Gender:" << V.Gender << "\n";
 
 	}
 
@@ -50,19 +50,30 @@ void StudentManager::display()
 		cin.ignore();
 		cout << "Enter the name " << "\n";
 		getline(cin, Name);
-		cout << "Enter the roll" << "\n";
-		cin >> Roll;
 		cout << "Enter the address" << "\n";
-		cin.ignore();
+		
 		getline(cin, Address);
+
 		cout << "Enter the section" << "\n";
-		cin.ignore();
+		
 		getline(cin, Section);
+
 		cout << "Enter the phone number" << "\n";
-		cin.ignore();
-		cin >> Phone_Number;
+
+		getline(cin, Phone_Number);
+
 		cout << "Enter the Gender" << "\n";
 		cin >> Gender;
+
+
+
+		cout << "Enter the roll" << "\n";
+		
+		cin >> Roll;
+	
+		
+		
+		
 
 
 
@@ -71,20 +82,125 @@ void StudentManager::display()
 
 	}
 
-	void StudentManager::RemoveStudent()
+	void StudentManager::RemoveStudent(string name)
 	{
+		for (auto it=Vectorstudent.begin();it<Vectorstudent.end();) {
+
+			if (name == it->Name) {
+				
+				Vectorstudent.erase(it);
+
+				break;
+			}
+			else {
+				it++;
+
+			}
+		}
 
 
 
 	}
 
-	void StudentManager::EditStudent()
+	void StudentManager::SearchStudent(string name)
 	{
+		
+		
+		
+		for (int i = 0; i < Vectorstudent.size(); i++) {
+			if (Vectorstudent[i].Name == name) {
+				cout << "Name:" << Vectorstudent[i].Name << "\n";
+				cout << "Roll:" << Vectorstudent[i].Roll << "\n";
+				cout << "Section:" << Vectorstudent[i].Section << "\n";
+				cout << "Phone number:" << Vectorstudent[i].Phone_Number << "\n";
+				cout << "Address:" << Vectorstudent[i].Address << "\n";
+				cout << "Gender:" << Vectorstudent[i].Gender << "\n";
+
+			}
 
 
+		}
+
+		
 
 	}
 
+	void StudentManager::EditStudent(string name)
+	{
+
+
+		for (auto& j : Vectorstudent) {
+
+			if (j.Name == name) {
+
+				cout << "************Current Deatail of student*************\n";
+				cout << "Name:" << j.Name << "\n";
+				cout << "Roll:" << j.Roll << "\n";
+				cout << "Section:" << j.Section << "\n";
+				cout << "Phone number:" << j.Phone_Number << "\n";
+				cout << "Address:" << j.Address << "\n";
+				cout << "Gender:" << j.Gender << "\n";
+				int ch;
+				do {
+				
+					
+						cout << "press 1 for Name\npress 2 for roll\npress 3 section \npress 4 phone_number \npress 5 address \npress 6 gender\npress 7 Exit\n";
+						cin >> ch;
+						cin.ignore();
+
+						switch (ch)
+						{
+						case 1:
+
+							cout << "Current Name:" << j.Name << "\n";
+							getline(cin, j.Name);
+
+							break;
+						case 2:
+							cout << "Current Roll:" << j.Roll << "\n";
+							cin >> j.Roll;
+							break;
+						case 3:
+							cout << "Current Section" << j.Section << "\n";
+							getline(cin, j.Section);
+							break;
+						case 4:
+							cout << "Current Phone Number" << j.Roll << "\n";
+							getline(cin, j.Phone_Number);
+							break;
+						case 5:
+							cout << "Current Address" << j.Address << "\n";
+							cin.ignore();
+							getline(cin, j.Address);
+							break;
+						case 6:
+							cout << "current Gender:" << j.Gender << "\n";
+							cin >> j.Gender;
+							break;
+
+						}
+
+
+
+					} while (ch != 7);
+				
+
+
+			}
+
+		}
+	}
+
+		
+
+
+
+
+
+
+	
+
+	
 
 
 
