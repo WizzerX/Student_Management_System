@@ -1,2 +1,3 @@
 ﻿  Student.cpp
-  student_management_System.vcxproj -> D:\WebDeve\c++\student_management_System\x64\Debug\student_management_System.exe
+main.obj : error LNK2019: unresolved external symbol "public: void __cdecl StudentManager::AddStudent(void)" (?AddStudent@StudentManager@@QEAAXXZ) referenced in function main
+D:\WebDeve\c++\student_management_System\x64\Debug\student_management_System.exe : fatal error LNK1120: 1 unresolved externals

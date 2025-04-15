@@ -2,14 +2,26 @@
 #include<vector>
 #include "../Header/Student.h"
 #include<string>
-
+#include <fstream>
 
 using namespace std;
 
 int main() {
 	unique_ptr<StudentManager>Student = make_unique<StudentManager>();
+	string line;
+	ifstream File("Student.txt");
+	
+	if (!File) {
+		cout << "Error in opening File\n";
+		return 1;
+	}
 
-
+	while (getline(File, line)) {
+									
+		cout << line;					
+	}									
+	File.close();				
+	
 
 	int choice;
 

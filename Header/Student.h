@@ -1,6 +1,7 @@
 #include<iostream>
 #include <string>
 #include<vector>
+
 using namespace std;
 
 
@@ -33,7 +34,7 @@ public:
 	void EditStudent(string name);
 
 	
-
+	
 
 	/*********************Getter************************/
 	string GetName() { return Name; }

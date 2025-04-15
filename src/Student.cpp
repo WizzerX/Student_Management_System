@@ -1,6 +1,7 @@
 #include<string>
 #include<iostream>
 #include "../Header/Student.h"
+#include<fstream>
 
 
 using namespace std;
@@ -19,7 +20,7 @@ StudentManager::StudentManager(string name, string address, string section, char
 	Gender = gender;
 	Address = address;
 	
-
+	
 }
 
 
@@ -41,48 +42,57 @@ for(const auto& V:Vectorstudent){
 
 	}
 
-	}
+}
 
 
 
-	void StudentManager::AddStudent()
-	{
-		cin.ignore();
-		cout << "Enter the name " << "\n";
-		getline(cin, Name);
-		cout << "Enter the address" << "\n";
-		
-		getline(cin, Address);
 
-		cout << "Enter the section" << "\n";
-		
-		getline(cin, Section);
+void StudentManager::AddStudent()
+{
+	cin.ignore();
+	cout << "Enter the name " << "\n";
+	getline(cin, Name);
+	cout << "Enter the address" << "\n";
 
-		cout << "Enter the phone number" << "\n";
+	getline(cin, Address);
 
-		getline(cin, Phone_Number);
+	cout << "Enter the section" << "\n";
 
-		cout << "Enter the Gender" << "\n";
-		cin >> Gender;
+	getline(cin, Section);
 
+	cout << "Enter the phone number" << "\n";
 
+	getline(cin, Phone_Number);
 
-		cout << "Enter the roll" << "\n";
-		
-		cin >> Roll;
-	
-		
-		
-		
+	cout << "Enter the Gender" << "\n";
+	cin >> Gender;
 
 
 
-		Vectorstudent.push_back(StudentManager( Name, Address, Section, Gender, Roll, Phone_Number));
+	cout << "Enter the roll" << "\n";
 
+	cin >> Roll;
+
+	ofstream File("Student.txt", ios::app);
+	if (!File) {
+		cout << "Error in creating the file\n";
 
 	}
+	File << Name << " , " << Address << " , " << Section << " , " << Gender << " , " << Roll << " , " << Phone_Number << "\n";
+	File.close();
+	cout << "Data saved sucessfully...!\n";
 
-	void StudentManager::RemoveStudent(string name)
+
+
+
+
+
+
+	Vectorstudent.push_back(StudentManager(Name, Address, Section, Gender, Roll, Phone_Number));
+
+
+}
+void StudentManager::RemoveStudent(string name)
 	{
 		for (auto it=Vectorstudent.begin();it<Vectorstudent.end();) {
 
@@ -165,7 +175,7 @@ for(const auto& V:Vectorstudent){
 							getline(cin, j.Section);
 							break;
 						case 4:
-							cout << "Current Phone Number" << j.Roll << "\n";
+							cout << "Current Phone Number" << j.Phone_Number << "\n";
 							getline(cin, j.Phone_Number);
 							break;
 						case 5:
