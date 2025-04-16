@@ -29,18 +29,24 @@ StudentManager::StudentManager(string name, string address, string section, char
 
 
 void StudentManager::display()
-	{
-for(const auto& V:Vectorstudent){
+{
+	string line;
+	ifstream File("Student.txt", ios::in);
 
-	
+
+
+	/*
 		cout << "Name:" << V.Name << "\n";
 		cout << "Roll:" << V.Roll << "\n";
 		cout << "Section:" << V.Section << "\n";
 		cout << "Phone number:" << V.Phone_Number << "\n";
 		cout << "Address:" << V.Address << "\n";
 		cout << "Gender:" << V.Gender << "\n";
+		*/
+	
 
-	}
+	
+
 
 }
 
