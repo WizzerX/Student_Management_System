@@ -7,16 +7,12 @@
       "RelativeMoniker": "D:0:0:{B010624B-CFA5-458E-8D41-8304E703A411}|student_management_System.vcxproj|solutionrelative:src\\Student.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B010624B-CFA5-458E-8D41-8304E703A411}|student_management_System.vcxproj|D:\\WebDeve\\c\u002B\u002B\\student_management_System\\student_management_System\\Header\\Student.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B010624B-CFA5-458E-8D41-8304E703A411}|student_management_System.vcxproj|solutionrelative:Header\\Student.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B010624B-CFA5-458E-8D41-8304E703A411}|student_management_System.vcxproj|D:\\WebDeve\\c\u002B\u002B\\student_management_System\\student_management_System\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B010624B-CFA5-458E-8D41-8304E703A411}|student_management_System.vcxproj|solutionrelative:src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\WebDeve\\c\u002B\u002B\\student_management_System\\student_management_System\\Include_Files\\Student.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Include_Files\\Student.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{B010624B-CFA5-458E-8D41-8304E703A411}|student_management_System.vcxproj|D:\\WebDeve\\c\u002B\u002B\\student_management_System\\student_management_System\\Header\\Student.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B010624B-CFA5-458E-8D41-8304E703A411}|student_management_System.vcxproj|solutionrelative:Header\\Student.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,13 +26,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Student.h",
               "DocumentMoniker": "D:\\WebDeve\\c\u002B\u002B\\student_management_System\\student_management_System\\Header\\Student.h",
               "RelativeDocumentMoniker": "Header\\Student.h",
               "ToolTip": "D:\\WebDeve\\c\u002B\u002B\\student_management_System\\student_management_System\\Header\\Student.h",
               "RelativeToolTip": "Header\\Student.h",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAASwCEAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-12T09:16:34.643Z",
               "EditorCaption": ""
@@ -49,34 +45,23 @@
               "RelativeDocumentMoniker": "src\\Student.cpp",
               "ToolTip": "D:\\WebDeve\\c\u002B\u002B\\student_management_System\\student_management_System\\src\\Student.cpp",
               "RelativeToolTip": "src\\Student.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAALkAAAAAAAAAAAAkwNkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-10T10:28:21.551Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "main.cpp",
               "DocumentMoniker": "D:\\WebDeve\\c\u002B\u002B\\student_management_System\\student_management_System\\src\\main.cpp",
               "RelativeDocumentMoniker": "src\\main.cpp",
               "ToolTip": "D:\\WebDeve\\c\u002B\u002B\\student_management_System\\student_management_System\\src\\main.cpp",
               "RelativeToolTip": "src\\main.cpp",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-10T10:28:20.574Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Student.cpp",
-              "DocumentMoniker": "D:\\WebDeve\\c\u002B\u002B\\student_management_System\\student_management_System\\Include_Files\\Student.cpp",
-              "RelativeDocumentMoniker": "Include_Files\\Student.cpp",
-              "ToolTip": "D:\\WebDeve\\c\u002B\u002B\\student_management_System\\student_management_System\\Include_Files\\Student.cpp",
-              "RelativeToolTip": "Include_Files\\Student.cpp",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-10T10:25:58.511Z"
             }
           ]
         }

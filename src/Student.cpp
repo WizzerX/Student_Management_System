@@ -30,21 +30,25 @@ StudentManager::StudentManager(string name, string address, string section, char
 
 void StudentManager::display()
 {
-	string line;
-	ifstream File("Student.txt", ios::in);
+	string line, address, phone, name, gender, section, roll;
+	ifstream File("Student.txt");
+	while (getline(File, name)) {
+		getline(File, address);
+		getline(File, phone);
+
+		getline(File, section);
+		getline(File,gender);
+		getline(File,roll);
+		
+		cout << address << " , " << phone << " , " << name << " , " << section << " , " << roll << " , " << gender << "\n""\n";
 
 
 
-	/*
-		cout << "Name:" << V.Name << "\n";
-		cout << "Roll:" << V.Roll << "\n";
-		cout << "Section:" << V.Section << "\n";
-		cout << "Phone number:" << V.Phone_Number << "\n";
-		cout << "Address:" << V.Address << "\n";
-		cout << "Gender:" << V.Gender << "\n";
-		*/
+	}
+	File.close();
+
+
 	
-
 	
 
 
@@ -55,6 +59,16 @@ void StudentManager::display()
 
 void StudentManager::AddStudent()
 {
+	/*
+		cout << "Name:" << V.Name << "\n";
+		cout << "Roll:" << V.Roll << "\n";
+		cout << "Section:" << V.Section << "\n";
+		cout << "Phone number:" << V.Phone_Number << "\n";
+		cout << "Address:" << V.Address << "\n";
+		cout << "Gender:" << V.Gender << "\n";
+		*/
+
+
 	cin.ignore();
 	cout << "Enter the name " << "\n";
 	getline(cin, Name);

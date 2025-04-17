@@ -11,16 +11,7 @@ int main() {
 	string line;
 	ifstream File("Student.txt");
 	
-	if (!File) {
-		cout << "Error in opening File\n";
-		return 1;
-	}
-
-	while (getline(File, line)) {
-									
-		cout << line;					
-	}									
-	File.close();				
+					
 	
 
 	int choice;
