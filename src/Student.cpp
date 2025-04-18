@@ -10,7 +10,7 @@ using namespace std;
 
 StudentManager::StudentManager(){}
 
-StudentManager::StudentManager(string name, string address, string section, char gender, int roll, string phone)
+StudentManager::StudentManager(string name, string address, string section, string gender, string roll, string phone)
 {
 	
 	Name = name;
@@ -36,16 +36,24 @@ void StudentManager::display()
 
     ifstream File("Student.txt");
 
-    while (getline(File, name)) {
-        getline(File, address);
-        getline(File, phone_number);
-        getline(File, section);
-        File >> gender;
-        File >> roll;
-       
+	
 
-        cout << name << " \n	" << address << " \n " << phone_number << " \n " 
-             << section << " \n " << gender << " \n " << roll << "\n";
+    while (getline(File, Name)) {
+		getline(File, Phone_Number);
+		getline(File, Address);
+      
+        getline(File, Section);
+		getline(File, Gender);
+        getline(File ,Roll);
+		cout << '\n';
+	   
+		cout << Name;
+		cout << Address;
+		cout << Phone_Number;
+		cout << Section;
+		cout << Gender;
+		cout<< Roll;
+		
     }
 
     File.close();
@@ -57,16 +65,7 @@ void StudentManager::display()
 
 void StudentManager::AddStudent()
 {
-	/*
-		cout << "Name:" << V.Name << "\n";
-		cout << "Roll:" << V.Roll << "\n";
-		cout << "Section:" << V.Section << "\n";
-		cout << "Phone number:" << V.Phone_Number << "\n";
-		cout << "Address:" << V.Address << "\n";
-		cout << "Gender:" << V.Gender << "\n";
-		*/
-
-
+	
 	cin.ignore();
 	cout << "Enter the name " << "\n";
 	getline(cin, Name);
@@ -83,33 +82,32 @@ void StudentManager::AddStudent()
 	getline(cin, Phone_Number);
 	
 	cout << "Enter the Gender" << "\n";
-	cin >> Gender;
+	getline(cin, Gender);
 
 
 
 	cout << "Enter the roll" << "\n";
 
-	cin >> Roll;
+	getline(cin, Roll);
 
 	ofstream File("Student.txt", ios::app);
 	if (!File) {
 		cout << "Error in creating the file\n";
 
 	}
-	File << Name << " , " << Address << " , " << Section << " , " << Gender << " , " << Roll << " , " << Phone_Number << " \n ";
+	File << Name << " , " << Address << " , " << Section << " , " << Gender << " , " << Roll << " , " << Phone_Number<<"\n";
 
-	File.close();
+
 	cout << "Data saved sucessfully...!\n";
 
 
 
 
-
-
+	
 
 	Vectorstudent.push_back(StudentManager(Name, Address, Section, Gender, Roll, Phone_Number));
-
-	cin.clear();
+	File.close();
+	
 }
 void StudentManager::RemoveStudent(string name)
 	{
@@ -131,9 +129,9 @@ void StudentManager::RemoveStudent(string name)
 
 	}
 
-	void StudentManager::SearchStudent(string Searchname)
+	void StudentManager::SearchStudent( string Searchname)
 	{
-		ifstream File("Student.txt");
+		ifstream File("Student.txt",ios::out);
 
 		if (!File.is_open()) {
 

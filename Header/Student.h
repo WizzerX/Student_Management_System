@@ -9,9 +9,9 @@ using namespace std;
 class StudentManager
 {
 private:
-	char Gender;
+	string Gender;
 	string Name;
-	int Roll;
+	string Roll;
 	string Address;
 	string Section;
 	string  Phone_Number;
@@ -20,7 +20,7 @@ private:
 
 public:
 	StudentManager();
-	StudentManager(string name, string address, string section, char gender, int roll, string phone);
+	StudentManager(string name, string address, string section, string gender,string  roll, string phone);
 	
 	void display();
 	
@@ -38,11 +38,11 @@ public:
 
 	/*********************Getter************************/
 	string GetName() { return Name; }
-	int getRoll() { return Roll; }
+	string getRoll() { return Roll; }
 	string getphonenumber() { return Phone_Number; }
 	string getAddress() { return Address; }
 	string getSection() { return Section; }
-	char getGender() { return Gender; }
+	string  getGender() { return Gender; }
 
 
 };
