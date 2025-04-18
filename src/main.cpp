@@ -8,8 +8,7 @@ using namespace std;
 
 int main() {
 	unique_ptr<StudentManager>Student = make_unique<StudentManager>();
-	string line;
-	ifstream File("Student.txt");
+	
 	
 					
 	

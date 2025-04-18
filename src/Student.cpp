@@ -4,6 +4,7 @@
 #include<fstream>
 
 
+
 using namespace std;
 
 	
@@ -30,30 +31,33 @@ StudentManager::StudentManager(string name, string address, string section, stri
 
 void StudentManager::display()
 {
-    string name, address, phone_number, section;
-    char gender;
-    int roll;
+	string name, address, phone_number, section, line;
+    string gender;
+    string roll;
+	
 
     ifstream File("Student.txt");
 
 	
 
-    while (getline(File, Name)) {
-		getline(File, Phone_Number);
-		getline(File, Address);
-      
-        getline(File, Section);
-		getline(File, Gender);
-        getline(File ,Roll);
-		cout << '\n';
-	   
-		cout << Name;
-		cout << Address;
-		cout << Phone_Number;
-		cout << Section;
-		cout << Gender;
-		cout<< Roll;
+    while (getline(File,name)) {
+
 		
+		getline(File, address);
+		
+		getline(File, phone_number);
+        getline(File, section);
+		getline(File, gender);
+        getline(File ,roll);
+	
+		cout << "-------------------STUDENT INFO----------------------" << "\n";
+		cout << name<<"\n";
+		cout << address<<"\n";
+		cout << phone_number<<"\n";
+		cout << section << "\n";
+		cout << gender<<"\n";
+		cout<< roll<<"\n";
+		cout << "-----------------------------------------------------" << "\n";
     }
 
     File.close();
