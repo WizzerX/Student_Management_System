@@ -30,29 +30,27 @@ StudentManager::StudentManager(string name, string address, string section, char
 
 void StudentManager::display()
 {
-	string line, address, phone, name, gender, section, roll;
-	ifstream File("Student.txt");
-	while (getline(File, name)) {
-		getline(File, address);
-		getline(File, phone);
+    string name, address, phone_number, section;
+    char gender;
+    int roll;
 
-		getline(File, section);
-		getline(File,gender);
-		getline(File,roll);
-		
-		cout << address << " , " << phone << " , " << name << " , " << section << " , " << roll << " , " << gender << "\n""\n";
+    ifstream File("Student.txt");
 
+    while (getline(File, name)) {
+        getline(File, address);
+        getline(File, phone_number);
+        getline(File, section);
+        File >> gender;
+        File >> roll;
+       
 
+        cout << name << " \n	" << address << " \n " << phone_number << " \n " 
+             << section << " \n " << gender << " \n " << roll << "\n";
+    }
 
-	}
-	File.close();
-
-
-	
-	
-
-
+    File.close();
 }
+
 
 
 
@@ -83,7 +81,7 @@ void StudentManager::AddStudent()
 	cout << "Enter the phone number" << "\n";
 
 	getline(cin, Phone_Number);
-
+	
 	cout << "Enter the Gender" << "\n";
 	cin >> Gender;
 
@@ -98,7 +96,8 @@ void StudentManager::AddStudent()
 		cout << "Error in creating the file\n";
 
 	}
-	File << Name << " , " << Address << " , " << Section << " , " << Gender << " , " << Roll << " , " << Phone_Number << "\n";
+	File << Name << " , " << Address << " , " << Section << " , " << Gender << " , " << Roll << " , " << Phone_Number << " \n ";
+
 	File.close();
 	cout << "Data saved sucessfully...!\n";
 
@@ -110,7 +109,7 @@ void StudentManager::AddStudent()
 
 	Vectorstudent.push_back(StudentManager(Name, Address, Section, Gender, Roll, Phone_Number));
 
-
+	cin.clear();
 }
 void StudentManager::RemoveStudent(string name)
 	{
@@ -132,24 +131,42 @@ void StudentManager::RemoveStudent(string name)
 
 	}
 
-	void StudentManager::SearchStudent(string name)
+	void StudentManager::SearchStudent(string Searchname)
 	{
-		
-		
-		
-		for (int i = 0; i < Vectorstudent.size(); i++) {
-			if (Vectorstudent[i].Name == name) {
-				cout << "Name:" << Vectorstudent[i].Name << "\n";
-				cout << "Roll:" << Vectorstudent[i].Roll << "\n";
-				cout << "Section:" << Vectorstudent[i].Section << "\n";
-				cout << "Phone number:" << Vectorstudent[i].Phone_Number << "\n";
-				cout << "Address:" << Vectorstudent[i].Address << "\n";
-				cout << "Gender:" << Vectorstudent[i].Gender << "\n";
+		ifstream File("Student.txt");
 
-			}
+		if (!File.is_open()) {
 
+			cout << "Error in File opening\n";
 
 		}
+		
+
+
+		while (getline(File, Name)) {
+			getline(File, Address);
+			getline(File, Section);
+			File >> Gender; File.ignore();
+			File >> Roll; File.ignore();
+			getline(File, Phone_Number);
+
+
+
+
+
+			if (Searchname == Name) {
+				cout << "Name found!\n";
+				cout << "Name:" << Name << "\n";
+				cout << "Roll:" << Roll << "\n";
+				cout << "Section:" << Section << "\n";
+				cout << "Phone number:" << Phone_Number << "\n";
+				cout << "Address:" << Address << "\n";
+				cout << "Gender:" << Gender << "\n";
+			}
+
+		}
+
+		File.close();
 
 		
 

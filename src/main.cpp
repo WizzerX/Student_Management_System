@@ -49,9 +49,9 @@ int main() {
 		}
 		case 5: {
 			string Name;
-			cout << "Enter the name to edit\n";
-
-			cin >> Name;
+			cout << "Enter the name to search\n";
+			cin.ignore();
+			getline(cin,Name);
 			Student->SearchStudent(Name);
 			break;
 
