@@ -2,6 +2,12 @@
 #include<iostream>
 #include "../Header/Student.h"
 #include<fstream>
+#include <algorithm> 
+#include <cctype> 
+#include <locale>
+#include <sstream> 
+
+
 
 
 
@@ -26,6 +32,11 @@ StudentManager::StudentManager(string name, string address, string section, stri
 
 
 
+string trim(const string& str) {
+	size_t first = str.find_first_not_of(" \t\n\r");
+	size_t last = str.find_last_not_of(" \t\n\r");
+	return (first == string::npos || last == string::npos) ? "" : str.substr(first, (last - first + 1));
+}
 
 
 
@@ -36,7 +47,7 @@ void StudentManager::display()
     string roll;
 	
 
-    ifstream File("Student.txt");
+    ifstream File("Student.csv");
 
 	
 
@@ -94,22 +105,16 @@ void StudentManager::AddStudent()
 
 	getline(cin, Roll);
 
-	ofstream File("Student.txt", ios::app);
+	ofstream File("Student.csv", ios::app);
 	if (!File) {
 		cout << "Error in creating the file\n";
 
 	}
 
-	File << trim(Name) << "\n";
-	File << trim(Address) << "\n";
-	File << trim(Section) << "\n";
-	File << trim(Roll) << "\n";
-	File << trim(Phone_Number) << "\n";
-	File << trim(Gender) << "\n";
 
 
 
-	//File << Name << " , " << Address << " , " << Section << " , " << Gender << " , " << Roll << " , " << Phone_Number<<"\n";
+	File << Name << "\n" << Address << "\n" << Section << "\n" << Gender << "\n" << Roll << "\n" << Phone_Number<<"\n";
 
 
 	cout << "Data saved sucessfully...!\n";
@@ -126,7 +131,7 @@ void StudentManager::AddStudent()
 void StudentManager::RemoveStudent(string name)
 	{
 	string line;
-	ifstream File("Student.txt", ios::out);
+	ifstream File("Student.csv", ios::out);
 		if (!File.is_open()) {
 
 			cout << "ERROR IN OPENING FILE!\n";
@@ -147,6 +152,7 @@ void StudentManager::RemoveStudent(string name)
 
 
 
+
 	void StudentManager::SearchStudent( string Searchname)
 	{
 		string name, address, phone_number, section, line;
@@ -154,7 +160,7 @@ void StudentManager::RemoveStudent(string name)
 		string roll;
 		bool flag = false;
 
-		ifstream File("Student.txt");
+		ifstream File("Student.csv");
 
 		if (!File.is_open()) {
 
@@ -164,9 +170,9 @@ void StudentManager::RemoveStudent(string name)
 
 		
 
-		Searchname = trim(Searchname);
-		
-	
+
+
+
 		while (getline(File,name)) {
 			
 			getline(File, address);
@@ -174,10 +180,10 @@ void StudentManager::RemoveStudent(string name)
 			getline(File, roll);
 			getline(File, phone_number);
 			getline(File, gender);
-			name = trim(name);
+		
 			
 		if (name==Searchname) {
-
+			flag = true;
 				cout << "----------------------STUDENT DATA----------------------\n";
 				cout << "Name found!\n";
 				cout << "Name:" << name << "\n";
@@ -186,16 +192,16 @@ void StudentManager::RemoveStudent(string name)
 				cout << "Phone number:" << phone_number << "\n";
 				cout << "Address:" << address << "\n";
 				cout << "Gender:" << gender << "\n";
-				flag = true;
 				cout << "-----------------------------------------------------------\n";
 			}
 
 		}
-		if (!flag) {
-			cout << "No Student Name Found!\n";
-		}
 		
+		if (!flag) {
+			cout << "No Student Found!\n";
 
+
+		}
 		File.close();
 
 		
@@ -268,18 +274,7 @@ void StudentManager::RemoveStudent(string name)
 		}
 	}
 
-	string StudentManager::trim(const string& str)
-	{
-		size_t first = str.find_first_not_of(" \t\n\r\f\v");
-		size_t last = str.find_last_not_of(" \t\n\r\f\v");
-
-		if (first == string::npos || last == string::npos)
-			return ""; // string is all whitespace
-
-		return str.substr(first, (last - first + 1));
-
-		
-	}
+	
 
 		
 
