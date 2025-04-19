@@ -33,7 +33,8 @@ public:
 	void SearchStudent(string Searchname);
 	void EditStudent(string name);
 
-	
+	string trim(const string& str);
+
 	
 
 	/*********************Getter************************/
