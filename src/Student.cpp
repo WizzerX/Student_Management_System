@@ -114,7 +114,7 @@ void StudentManager::AddStudent()
 
 
 
-	File << Name << "\n" << Address << "\n" << Section << "\n" << Gender << "\n" << Roll << "\n" << Phone_Number<<"\n";
+	File << Name << "\n" << Address << "\n"<<Section << "\n" << Gender <<"\n"<< Roll << "\n"<< Phone_Number << "\n";
 
 
 	cout << "Data saved sucessfully...!\n";
@@ -181,7 +181,9 @@ void StudentManager::RemoveStudent(string name)
 			getline(File, phone_number);
 			getline(File, gender);
 		
-			
+
+
+	
 		if (name==Searchname) {
 			flag = true;
 				cout << "----------------------STUDENT DATA----------------------\n";
@@ -208,10 +210,10 @@ void StudentManager::RemoveStudent(string name)
 
 	}
 
-	void StudentManager::EditStudent(string name)
+	void StudentManager::EditStudent(string Editname)
 	{
 
-
+		/**
 		for (auto& j : Vectorstudent) {
 
 			if (j.Name == name) {
@@ -223,55 +225,84 @@ void StudentManager::RemoveStudent(string name)
 				cout << "Phone number:" << j.Phone_Number << "\n";
 				cout << "Address:" << j.Address << "\n";
 				cout << "Gender:" << j.Gender << "\n";
+		*/
+
+		ofstream WriteFile("Student.csv", ios::app);
+		ifstream ReadFile("Student.csv");
+		string name, address, phone_number, section, line, gender, roll;
+		while (getline(ReadFile, name)) {
+			getline(ReadFile, address);
+			getline(ReadFile, section);
+			getline(ReadFile, phone_number);
+			getline(ReadFile, gender);
+			getline(ReadFile, roll);
+
+			Vectorstudent.push_back(StudentManager(name, address, section, gender, roll, phone_number));
+		}
+					
+		for (auto& g : Vectorstudent) {
+
+			
+			
+			if (g.Name == Editname) {
+
 				int ch;
 				do {
+					cout << "**************CURRENT DATA OF STUDENT************************\n";
+					cout << "NAME:" << g.Name << "\n";
+					cout << "ADDRESS:" << g.Address << "\n";
+					cout << "ROLL:" << g.Roll << "\n";
+					cout << "SECTION:" << g.Section << "\n";
+					cout << "PHONE NUMBER:" << g.Phone_Number << "\n";
+					cout << "GENDER:" << g.Gender << "\n";
+					cout << "*****************************************************************\n";
+
+					cout << "press 1 for Name\npress 2 for roll\npress 3 section \npress 4 phone_number \npress 5 address \npress 6 gender\npress 7 Exit\n";
+					cin >> ch;
+					cin.ignore();
+
+					switch (ch)
+					{
+					case 1:
+
+						cout << "Current Name:" << "\n";
+
+
+						break;
+					case 2:
+						cout << "Current Roll:" << "\n";
+
+						break;
+					case 3:
+						cout << "Current Section" << "\n";
+
+						break;
+					case 4:
+						cout << "Current Phone Number" << "\n";
+
+						break;
+					case 5:
+						cout << "Current Address" << "\n";
 				
-					
-						cout << "press 1 for Name\npress 2 for roll\npress 3 section \npress 4 phone_number \npress 5 address \npress 6 gender\npress 7 Exit\n";
-						cin >> ch;
-						cin.ignore();
 
-						switch (ch)
-						{
-						case 1:
+						break;
+					case 6:
+						cout << "current Gender:" << "\n";
 
-							cout << "Current Name:" << j.Name << "\n";
-							getline(cin, j.Name);
+						break;
 
-							break;
-						case 2:
-							cout << "Current Roll:" << j.Roll << "\n";
-							cin >> j.Roll;
-							break;
-						case 3:
-							cout << "Current Section" << j.Section << "\n";
-							getline(cin, j.Section);
-							break;
-						case 4:
-							cout << "Current Phone Number" << j.Phone_Number << "\n";
-							getline(cin, j.Phone_Number);
-							break;
-						case 5:
-							cout << "Current Address" << j.Address << "\n";
-							cin.ignore();
-							getline(cin, j.Address);
-							break;
-						case 6:
-							cout << "current Gender:" << j.Gender << "\n";
-							cin >> j.Gender;
-							break;
-
-						}
+					}
 
 
 
-					} while (ch != 7);
-				
+				} while (ch != 7);
+
 
 
 			}
-
 		}
+
+		
 	}
 
 	

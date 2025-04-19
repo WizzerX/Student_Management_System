@@ -31,7 +31,7 @@ public:
 	void AddStudent();
 	void RemoveStudent(string name);
 	void SearchStudent(string Searchname);
-	void EditStudent(string name);
+	void EditStudent(string Editname);
 
 
 
