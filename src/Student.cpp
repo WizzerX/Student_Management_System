@@ -130,27 +130,69 @@ void StudentManager::AddStudent()
 	File.close();
 	
 }
-void StudentManager::RemoveStudent(string name)
-	{
-	string line;
-	ifstream File("Student.csv", ios::out);
-		if (!File.is_open()) {
+void StudentManager::RemoveStudent(string Removename)
+{
+	string line, name, address, gender, phone, roll, phone_number, section;
+	ifstream ReadFile("Student.csv");
+		if (!ReadFile.is_open()) {
 
 			cout << "ERROR IN OPENING FILE!\n";
 
-	}
-		while (getline(File, line)) {
+		}
+		while (getline(ReadFile,name)) {
+			getline(ReadFile, address);
+			getline(ReadFile, section);
+			getline(ReadFile, gender);
+			getline(ReadFile, roll);
+			getline(ReadFile, phone_number);
 
-			if (name == line) {
+			Vectorstudent.push_back(StudentManager(Name, Address, Section, Gender, Roll, Phone_Number));
+			
 				
-			}
+		}
+		ReadFile.close();
+		
+		int ch;
+		for (auto& g : Vectorstudent) {
 
+			if (g.Name == Removename) {
+				cout << "**************CURRENT DATA OF STUDENT************************\n";
+				cout << "NAME:" << g.Name << "\n";
+				cout << "ADDRESS:" << g.Address << "\n";
+				cout << "ROLL:" << g.Roll << "\n";
+				cout << "SECTION:" << g.Section << "\n";
+				cout << "PHONE NUMBER:" << g.Phone_Number << "\n";
+				cout << "GENDER:" << g.Gender << "\n";
+				cout << "*****************************************************************\n";
+				g.Name.clear();
+				g.Address.clear();
+				g.Roll.clear();
+				g.Section.clear();
+				g.Phone_Number.clear();
+				g.Gender.clear();
+					
+				cout << "VALUE" << g.Name;
+
+			}
+			ofstream WriteFile("Student.csv");
+			for (auto& h : Vectorstudent) {
+				WriteFile << h.Name << "\n" << h.Address << "\n" << g.Roll << "\n"
+					<< g.Section << "\n" << g.Phone_Number 
+					<< "\n" << g.Gender << "\n";
+
+
+
+			}
+			WriteFile.close();
 
 		}
 
 
+		
+		
 
-	}
+
+}
 
 
 
@@ -326,7 +368,15 @@ void StudentManager::RemoveStudent(string name)
 
 
 			}
+
+
+		
+
+
 		}
+
+
+
 		ReadFile.close();
 		ofstream WriteFile("Student.csv", ios::trunc);
 		for (auto& s : Vectorstudent) {
@@ -338,7 +388,10 @@ void StudentManager::RemoveStudent(string name)
 
 		}
 		WriteFile.close();
+		if (flag == false) {
 
+			cout << "No Student Name Found!\n";
+		}
 		
 	}
 

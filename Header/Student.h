@@ -29,7 +29,7 @@ public:
 
 	/*********************Setter************************/
 	void AddStudent();
-	void RemoveStudent(string name);
+	void RemoveStudent(string Removename);
 	void SearchStudent(string Searchname);
 	void EditStudent(string Editname);
 
