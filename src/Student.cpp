@@ -55,12 +55,14 @@ void StudentManager::display()
 
 		
 		getline(File, address);
-		
-		getline(File, phone_number);
-        getline(File, section);
+		getline(File, section);
 		getline(File, gender);
-        getline(File ,roll);
-	
+
+		getline(File, roll);
+
+		getline(File, phone_number);
+        
+		
 		cout << "-------------------STUDENT INFO----------------------" << "\n";
 		cout << name<<"\n";
 		cout << address<<"\n";
@@ -177,9 +179,12 @@ void StudentManager::RemoveStudent(string name)
 			
 			getline(File, address);
 			getline(File, section);
+			getline(File, gender);
 			getline(File, roll);
 			getline(File, phone_number);
-			getline(File, gender);
+			
+			
+		
 		
 
 
@@ -227,15 +232,18 @@ void StudentManager::RemoveStudent(string name)
 				cout << "Gender:" << j.Gender << "\n";
 		*/
 
-		ofstream WriteFile("Student.csv", ios::app);
+		
 		ifstream ReadFile("Student.csv");
+		bool flag = false;
 		string name, address, phone_number, section, line, gender, roll;
 		while (getline(ReadFile, name)) {
 			getline(ReadFile, address);
 			getline(ReadFile, section);
-			getline(ReadFile, phone_number);
 			getline(ReadFile, gender);
 			getline(ReadFile, roll);
+			getline(ReadFile, phone_number);
+			
+			
 
 			Vectorstudent.push_back(StudentManager(name, address, section, gender, roll, phone_number));
 		}
@@ -245,7 +253,7 @@ void StudentManager::RemoveStudent(string name)
 			
 			
 			if (g.Name == Editname) {
-
+				flag = true;
 				int ch;
 				do {
 					cout << "**************CURRENT DATA OF STUDENT************************\n";
@@ -263,31 +271,49 @@ void StudentManager::RemoveStudent(string name)
 
 					switch (ch)
 					{
-					case 1:
-
-						cout << "Current Name:" << "\n";
-
-
-						break;
-					case 2:
-						cout << "Current Roll:" << "\n";
+					case 1: {
+						string Student1;
+						cout << "Current Name:" << g.Name << "\n";
+						getline(cin, Student1);
+						g.Name = Student1;
 
 						break;
-					case 3:
-						cout << "Current Section" << "\n";
-
+					}
+					case 2: {
+						string roll1;
+						cout << "Current Roll:" << g.Roll << "\n";
+						getline(cin, roll1);
+						g.Roll = roll1;
 						break;
-					case 4:
-						cout << "Current Phone Number" << "\n";
+					}
+					case 3: {
 
+						string section1;
+						cout << "Current Section" << g.Section << "\n";
+						getline(cin, section1);
+						g.Section = section1;
 						break;
-					case 5:
-						cout << "Current Address" << "\n";
-				
-
+					}
+					case 4: {
+						string phone_number1;
+						cout << "Current Phone Number" <<g.Phone_Number <<"\n";
+						getline(cin, phone_number1);
+						g.Phone_Number = phone_number1;
 						break;
-					case 6:
-						cout << "current Gender:" << "\n";
+					}
+					case 5: {
+						string address1;
+						cout << "Current Address" << g.Address << "\n";
+						getline(cin, address1);
+						g.Address = address1;
+						break;
+					}
+					case 6: {
+						string gender1;
+						cout << "current Gender:" << g.Gender << "\n";
+						getline(cin, gender1);
+						g.Gender = gender1;
+					}
 
 						break;
 
@@ -301,6 +327,16 @@ void StudentManager::RemoveStudent(string name)
 
 			}
 		}
+		ofstream WriteFile("Student.csv", ios::trunc);
+		for (auto& s : Vectorstudent) {
+
+			WriteFile << s.Name << "\n" << s.Address << "\n" 
+				<< s.Section << "\n" << s.Gender << "\n" 
+				<< s.Roll << "\n" 	<< s.Phone_Number << "\n";
+
+
+		}
+		WriteFile.close();
 
 		
 	}
