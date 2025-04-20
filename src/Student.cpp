@@ -47,7 +47,7 @@ void StudentManager::display()
     string roll;
 	
 
-    ifstream File("Student.csv");
+    ifstream File("Student.csv",ios::in);
 
 	
 
@@ -217,7 +217,7 @@ void StudentManager::RemoveStudent(string name)
 
 	void StudentManager::EditStudent(string Editname)
 	{
-
+		Vectorstudent.clear();
 		/**
 		for (auto& j : Vectorstudent) {
 
@@ -327,6 +327,7 @@ void StudentManager::RemoveStudent(string name)
 
 			}
 		}
+		ReadFile.close();
 		ofstream WriteFile("Student.csv", ios::trunc);
 		for (auto& s : Vectorstudent) {
 
