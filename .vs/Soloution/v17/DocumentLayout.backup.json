@@ -32,10 +32,9 @@
               "RelativeDocumentMoniker": "Header\\Student.h",
               "ToolTip": "D:\\WebDeve\\c\u002B\u002B\\student_management_System\\student_management_System\\Header\\Student.h",
               "RelativeToolTip": "Header\\Student.h",
-              "ViewState": "AgIAABcAAAAAAAAAAAASwCEAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAkwB8AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-12T09:16:34.643Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T09:16:34.643Z"
             },
             {
               "$type": "Document",
@@ -43,9 +42,9 @@
               "Title": "Student.cpp",
               "DocumentMoniker": "D:\\WebDeve\\c\u002B\u002B\\student_management_System\\student_management_System\\src\\Student.cpp",
               "RelativeDocumentMoniker": "src\\Student.cpp",
-              "ToolTip": "D:\\WebDeve\\c\u002B\u002B\\student_management_System\\student_management_System\\src\\Student.cpp",
-              "RelativeToolTip": "src\\Student.cpp",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAAEkAAAANAAAAAAAAAA==",
+              "ToolTip": "D:\\WebDeve\\c\u002B\u002B\\student_management_System\\student_management_System\\src\\Student.cpp*",
+              "RelativeToolTip": "src\\Student.cpp*",
+              "ViewState": "AgIAAAcBAAAAAAAAAAAAALkAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-10T10:28:21.551Z",
               "EditorCaption": ""
@@ -58,10 +57,9 @@
               "RelativeDocumentMoniker": "src\\main.cpp",
               "ToolTip": "D:\\WebDeve\\c\u002B\u002B\\student_management_System\\student_management_System\\src\\main.cpp",
               "RelativeToolTip": "src\\main.cpp",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACMAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-10T10:28:20.574Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-10T10:28:20.574Z"
             }
           ]
         }
